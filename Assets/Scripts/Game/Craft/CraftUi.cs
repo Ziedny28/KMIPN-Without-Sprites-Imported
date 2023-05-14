@@ -9,6 +9,7 @@ public class CraftUi : MonoBehaviour
 {
     public GameObject craftButtonPrefab;
     public CraftManager craftManager;
+    public PauseGame pauseGame;
 
     private void OnEnable()
     {

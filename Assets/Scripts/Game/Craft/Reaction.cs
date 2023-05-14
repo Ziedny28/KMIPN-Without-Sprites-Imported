@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 //membuat rekasi yang bisa dilakukan
-[CreateAssetMenu(fileName = "New ScriptableObject", menuName = "Scriptable Objects/ReactionData")]
+[CreateAssetMenu]
 public class Reaction : ScriptableObject
 {
     public List<ItemData> needed;

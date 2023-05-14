@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour {
@@ -12,22 +11,11 @@ public class MonsterController : MonoBehaviour {
 
     public GameObject player;
 
-    public State state;
-
-    public Animator anim;
-
-    public enum State
-    {
-        main,attack,freezed
-
-    }
     void Start() {
         normalSpeed = speed;
-        anim = GetComponent<Animator>();
     }
 
     void Update() {
-
         // Pergerakan monster
         if (movingRight) 
         {
@@ -53,24 +41,17 @@ public class MonsterController : MonoBehaviour {
             {
                 if (coll.CompareTag("Player")) 
                 {
-                    state = State.attack;
                     speed = normalSpeed * 2f; // kejar dan kill player ketika player ada di range musuh
                     Vector3 direction = player.transform.position - transform.position;
                     transform.Translate(direction.normalized * speed * Time.deltaTime);
                     Debug.Log("MAMPUS!1!!");
-
-
                 }
             }
         }
         else 
         {
             speed = normalSpeed; // kecepatan monster kembali seperti semula, ketika player tidak di range musuh
-            state = State.main;
         }
-
-        //animasi
-        anim.SetInteger("state", (int)state);
     }
 
     void OnDrawGizmos() {
@@ -82,16 +63,5 @@ public class MonsterController : MonoBehaviour {
             radius = GetComponent<Collider>().bounds.size.magnitude; // ambil ukuran dari collider
         }
         Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
-    public void Freeze()
-    {
-        state = State.freezed;
-    }
-
-    public void UnFreeze()
-    {
-        state = State.freezed;
-        state = State.freezed;
     }
 }

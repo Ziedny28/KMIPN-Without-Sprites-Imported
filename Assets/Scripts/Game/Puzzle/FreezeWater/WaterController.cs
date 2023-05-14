@@ -13,13 +13,6 @@ public class WaterController : MonoBehaviour
     public GameObject Monster;
     public string MonsterController;
 
-    private MonsterController monster;
-
-    private void Start()
-    {
-        monster = Monster.GetComponent<MonsterController>(); 
-    }
-
     private void Update()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(waterCollider.bounds.center, waterCollider.bounds.size, 0, nitrogenLayer);
@@ -36,9 +29,7 @@ public class WaterController : MonoBehaviour
                 // Freeze monster
                 if (monsterCollider != null)
                 {
-                    monster.Freeze();
                     (Monster.GetComponent(MonsterController) as MonoBehaviour).enabled = false;
-                    
                 }
                 // Freeze Genangan air
                 isFrozen = true;
@@ -57,7 +48,6 @@ public class WaterController : MonoBehaviour
                 isFrozen = false;
                 if (monsterCollider != null || isFrozen == false)
                 {
-                    monster.UnFreeze();
                     (Monster.GetComponent(MonsterController) as MonoBehaviour).enabled = true;
                 }
             }

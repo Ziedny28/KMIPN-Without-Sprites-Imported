@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Monster
   - Nitrogen
-  - Enemy
   layers:
   - Default
   - TransparentFX

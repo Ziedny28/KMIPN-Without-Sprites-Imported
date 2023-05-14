@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: Result2
   description: Result of reaction 2
-  icon: {fileID: 21300000, guid: a1d43baeccae7d54da4668ddd560b3a0, type: 3}
+  icon: {fileID: 21300000, guid: b79b068db434ed34897f3e58ca104055, type: 3}

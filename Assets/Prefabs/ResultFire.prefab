@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac7b36c17b9c3f47b2bfd2284249625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 30
+  mainCam: {fileID: 0}
+  force: 7
   item: {fileID: 11400000, guid: 91cefda8f5f248b4da53fd4ecd3554a0, type: 2}
 --- !u!114 &1947424957570206354
 MonoBehaviour:
@@ -220,7 +221,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.2
+  m_Time: 5
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1

@@ -25,10 +25,13 @@ public class CraftManager : MonoBehaviour
     public static event Action closeReactingUI;
 
     bool isOpeningReactingTab = false;
+    public PauseGame pauseGame;
 
 
     private void Update()
     {
+        //Agar reacting tab tidak muncul saat game di pause
+        if (pauseGame.isGamePaused == true) return;
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             isOpeningReactingTab = !isOpeningReactingTab;

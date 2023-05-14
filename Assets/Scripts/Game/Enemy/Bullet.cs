@@ -5,12 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Vector3 mousePos;
-    private Camera mainCam;
+    public Camera mainCam;
     private Rigidbody2D rb;
     public float force=7;
 
     //item yang akan dikurangi
     public ItemData item;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,5 @@ public class Bullet : MonoBehaviour
         Vector3 rotation = transform.position - mousePos;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-        }
     }
 }
