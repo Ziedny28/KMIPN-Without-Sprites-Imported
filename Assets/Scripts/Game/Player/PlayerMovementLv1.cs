@@ -9,7 +9,10 @@ using UnityEngine.Windows;
 public class PlayerMovementLv1 : MonoBehaviour
 {
     [SerializeField]
-    private float _speed;
+    private float _speed = 5;
+
+    [SerializeField]
+    private float _fasterSpeed = 10;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _movementInput;
@@ -59,8 +62,14 @@ public class PlayerMovementLv1 : MonoBehaviour
         }
     }
 
+
     private void OnMove(InputValue inputValue)
     {
         _movementInput = inputValue.Get<Vector2>();
     }
+
+    public void UpdateSpeed() {
+        _speed = _fasterSpeed;
+    }
+
 }

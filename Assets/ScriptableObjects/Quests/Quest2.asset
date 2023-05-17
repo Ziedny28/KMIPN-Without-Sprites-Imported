@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bcb19fc22b3fbd4dbddcfcb570de32e, type: 3}
   m_Name: Quest2
   m_EditorClassIdentifier: 
-  questName: second quest
-  description: second quest
+  questName: 'berinteraksi '
+  description: bercakap dengan orang-orang

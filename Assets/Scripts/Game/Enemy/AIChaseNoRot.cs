@@ -8,7 +8,7 @@ public class AIChaseNoRot : MonoBehaviour
     public float speed=4f;
     public float distanceBetween=6f;
 
-    private float distance;
+    public float distance;
     private SpriteRenderer sprite;
 
     public Animator anim;

@@ -14,6 +14,8 @@ public class Dialogue : MonoBehaviour
     public GameObject ContinueButton;
     public Animator textDisplayAnim;
 
+    public bool doneTalking;
+
     private void OnEnable()
     {
         StartCoroutine(Type());
@@ -25,6 +27,11 @@ public class Dialogue : MonoBehaviour
         {
             ContinueButton.SetActive(true);
         }
+        if (index == sentences.Length - 1)
+        {
+            doneTalking = true;
+        }
+
     }
 
     IEnumerator Type()

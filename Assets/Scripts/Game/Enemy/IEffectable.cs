@@ -6,6 +6,7 @@ using UnityEngine;
 public class IEffectable : MonoBehaviour
 {
     public Enemy enemy;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("colliding");
