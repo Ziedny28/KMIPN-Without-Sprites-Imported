@@ -65,7 +65,6 @@ public class CraftManager : MonoBehaviour
         foreach (Reaction r in reactions)
         {
             bool resourceAvailable = CheckNeededResource(r,inInventory);
-
             //if a stuff doesnt available, the reaction shouldnt be possible
             if (!resourceAvailable)
             {
@@ -120,9 +119,15 @@ public class CraftManager : MonoBehaviour
                 OnReduceItem?.Invoke(i);
             }
 
-            //memberi player hasil
-            OnAddItem?.Invoke(r.result);
-            Debug.Log($"You Got{r.result.displayName}");
+            //memberi player hasil 5 kali
+            int amount = 5;
+            for (int i = 0; i < amount; i++)
+            {
+                
+                OnAddItem?.Invoke(r.result);
+                Debug.Log($"You Got{r.result.displayName}");
+            }
+            
         }
         if (!resourceAvailable)
         {

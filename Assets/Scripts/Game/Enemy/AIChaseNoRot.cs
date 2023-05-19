@@ -8,6 +8,8 @@ public class AIChaseNoRot : MonoBehaviour
     public float speed=4f;
     public float distanceBetween=6f;
 
+    public float attackDistance = 2f;
+
     public float distance;
     private SpriteRenderer sprite;
 
@@ -50,6 +52,11 @@ public class AIChaseNoRot : MonoBehaviour
         if (distance < distanceBetween)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+
+        if(distance < attackDistance) 
+        {
+            state = movementState.attack;
         }
 
         anim.SetInteger("state", (int)state);
