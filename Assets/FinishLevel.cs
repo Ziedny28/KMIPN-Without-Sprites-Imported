@@ -7,11 +7,11 @@ public class FinishLevel : MonoBehaviour
 {
     public AIChaseNoRot[] enemies;
     private bool enemiesIsFar=false;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("MASUK FN");
-
         CheckEnemyDistance();
+
+        Debug.Log(enemiesIsFar);
         if (other.gameObject.CompareTag("Player") && enemiesIsFar)
         {
             //lanjut lv berikutny
