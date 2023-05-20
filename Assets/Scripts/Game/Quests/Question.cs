@@ -9,7 +9,6 @@ public class Question : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private string question;
-    [SerializeField] private float typingSpeed=0.02f;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
